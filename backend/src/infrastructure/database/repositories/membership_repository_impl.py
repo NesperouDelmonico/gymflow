@@ -6,9 +6,10 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
-from src.domain.entities.membership import (
-    Membership, MembershipPlan, MembershipStatus, PlanType, User,
-)
+from src.domain.entities.membership import Membership, MembershipStatus
+from src.domain.entities.plan import MembershipPlan, PlanType
+from src.domain.entities.user import User
+
 from src.domain.repositories.membership_repository import (
     IMembershipRepository, IPlanRepository, IUserRepository,
 )

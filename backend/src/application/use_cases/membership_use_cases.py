@@ -8,6 +8,10 @@ from datetime import date
 from uuid import UUID, uuid4
 
 from src.domain.entities.membership import Membership, MembershipStatus
+from src.domain.entities.plan import MembershipPlan, PlanType
+from src.domain.entities.user import User
+
+
 from src.domain.repositories.membership_repository import (
     IMembershipRepository,
     IPlanRepository,

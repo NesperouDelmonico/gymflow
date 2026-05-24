@@ -1,5 +1,5 @@
 # src/domain/entities/membership.py
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from datetime import date
 from enum import Enum
 from typing import Optional
@@ -11,34 +11,6 @@ class MembershipStatus(str, Enum):
     PAUSED = "paused"
     CANCELLED = "cancelled"
     EXPIRED = "expired"
-
-
-class PlanType(str, Enum):
-    BASIC = "basic"
-    PREMIUM = "premium"
-    DELUXE = "deluxe"
-
-
-@dataclass
-class MembershipPlan:
-    id: UUID
-    name: PlanType
-    display_name: str
-    description: str
-    price_monthly: float
-    features: list[str]
-    is_active: bool = True
-
-
-@dataclass
-class User:
-    id: UUID
-    role_id: UUID
-    full_name: str
-    email: str
-    phone: Optional[str]
-    is_active: bool = True
-    role_name: Optional[str] = None
 
 
 @dataclass
@@ -53,7 +25,6 @@ class Membership:
     notes: Optional[str] = None
     created_by: Optional[UUID] = None
 
-    # ── Reglas de negocio (lógica en el dominio) ──────────────
     def is_active(self) -> bool:
         return self.status == MembershipStatus.ACTIVE
 

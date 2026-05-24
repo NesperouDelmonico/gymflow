@@ -20,7 +20,7 @@ from src.application.use_cases.membership_use_cases import (
     ListMembershipsUseCase,
     UpdateMembershipUseCase,
 )
-from src.domain.entities.membership import User
+from src.domain.entities.user import User
 from src.infrastructure.database.repositories.membership_repository_impl import (
     MembershipRepositoryImpl,
     PlanRepositoryImpl,
