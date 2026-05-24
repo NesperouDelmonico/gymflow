@@ -1,17 +1,12 @@
-# main.py
+from dotenv import load_dotenv
+load_dotenv()
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
 from src.infrastructure.api.routes.auth import router as auth_router
 from src.infrastructure.api.routes.memberships import router as memberships_router
 from src.infrastructure.api.routes.plans import router as plans_router
 from src.infrastructure.api.routes.users import router as users_router
-
-from dotenv import load_dotenv
-load_dotenv()
-
-import os
-print(">>> DATABASE_URL:", os.getenv("DATABASE_URL"))
 
 app = FastAPI(
     title="GymFlow API",
@@ -21,7 +16,12 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000"],
+    allow_origins=[
+        "http://localhost:5173",
+        "http://localhost:3000",
+        "https://gymflow-three-alpha.vercel.app",
+        "https://gymflow-75h2o7ynp-alfonsoperezva-1706s-projects.vercel.app",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -31,13 +31,6 @@ app.include_router(auth_router)
 app.include_router(memberships_router)
 app.include_router(plans_router)
 app.include_router(users_router)
-
-allow_origins=[
-    "http://localhost:5173",
-    "https://gymflow-three-alpha.vercel.app",
-    "https://gymflow-75h2o7ynp-alfonsoperezva-1706s-projects.vercel.app",
-],
-
 
 @app.get("/health")
 async def health():
