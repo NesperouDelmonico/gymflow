@@ -32,6 +32,11 @@ app.include_router(memberships_router)
 app.include_router(plans_router)
 app.include_router(users_router)
 
+allow_origins=[
+    "http://localhost:5173",
+    "https://gymflow-three-alpha.vercel.app",
+],
+
 
 @app.get("/health")
 async def health():
