@@ -25,6 +25,7 @@ class Membership:
     notes: Optional[str] = None
     created_by: Optional[UUID] = None
 
+    # ── Reglas de negocio (lógica en el dominio) ──────────────
     def is_active(self) -> bool:
         return self.status == MembershipStatus.ACTIVE
 
