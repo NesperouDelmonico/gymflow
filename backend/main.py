@@ -35,6 +35,7 @@ app.include_router(users_router)
 allow_origins=[
     "http://localhost:5173",
     "https://gymflow-three-alpha.vercel.app",
+    "https://gymflow-75h2o7ynp-alfonsoperezva-1706s-projects.vercel.app",
 ],
 
 
