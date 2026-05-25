@@ -117,17 +117,3 @@ Re-exporta todas las clases para mantener compatibilidad con imports existentes 
 | DELETE | `/memberships/{id}` | Admin | Eliminar |
 | GET | `/memberships/my` | Auth | Mis membresías |
 | GET | `/users/` | Admin | Listar usuarios |
-
----
-
-## Modelo de datos
-
-```
-roles ──< users ──< memberships >── membership_plans
-                         │
-                  membership_history
-```
-
-Los triggers de PostgreSQL manejan:
-- `updated_at` automático en todas las tablas
-- Auditoría automática de cambios en membresías
