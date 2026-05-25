@@ -90,53 +90,6 @@ Re-exporta todas las clases para mantener compatibilidad con imports existentes 
 
 ---
 
-## Setup local
-
-### 1. Base de datos (Supabase)
-
-1. Crea un proyecto en [supabase.com](https://supabase.com)
-2. En SQL Editor, ejecuta `database_schema.sql`
-3. Copia la cadena de conexión del proyecto
-
-### 2. Backend
-
-```bash
-cd backend
-python -m venv .venv
-
-# Windows PowerShell
-.venv\Scripts\Activate.ps1
-
-# Linux / Mac
-source .venv/bin/activate
-
-pip install -r requirements.txt
-
-cp .env.example .env
-# Edita .env con tu DATABASE_URL de Supabase y un SECRET_KEY seguro
-
-uvicorn main:app --reload --port 8000
-```
-
-API disponible en `http://localhost:8000`
-Docs interactivos: `http://localhost:8000/docs`
-
-### 3. Frontend
-
-```bash
-cd frontend
-npm install
-
-# Crea .env.local con:
-# VITE_API_URL=http://localhost:8000
-
-npm run dev
-```
-
-App disponible en `http://localhost:5173`
-
----
-
 ## Flujo de uso
 
 ### Administrador
