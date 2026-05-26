@@ -6,10 +6,14 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
+"Implementación de repositorios – capa de infraestructura."
+"Implementa los contratos definidos en domain/repositories usando SQLAlchemy."
+"Cada método se encarga de mapear entre modelos de base de datos y entidades del dominio"
 from src.domain.entities.membership import Membership, MembershipStatus
 from src.domain.entities.plan import MembershipPlan, PlanType
 from src.domain.entities.user import User
 
+"Repositorios para gestionar membresías, planes y usuarios. Son interfaces que definen el contrato de acceso a datos."
 from src.domain.repositories.membership_repository import (
     IMembershipRepository, IPlanRepository, IUserRepository,
 )

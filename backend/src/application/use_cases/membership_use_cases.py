@@ -7,23 +7,25 @@ Dependen de abstracciones, no de implementaciones concretas (DIP).
 from datetime import date
 from uuid import UUID, uuid4
 
+"Casos de uso para gestionar membresías: creación, consulta, actualización y eliminación."
 from src.domain.entities.membership import Membership, MembershipStatus
 from src.domain.entities.plan import MembershipPlan, PlanType
 from src.domain.entities.user import User
 
-
+"Puertos de entrada para casos de uso relacionados con membresías."
 from src.domain.repositories.membership_repository import (
     IMembershipRepository,
     IPlanRepository,
     IUserRepository,
 )
+"DTOs para planes, usuarios, membresías y autenticación (registro/login)"
 from src.application.dtos.membership_dto import (
     MembershipCreateDTO,
     MembershipUpdateDTO,
     MembershipResponseDTO,
 )
 
-
+"Casos de uso para gestionar membresías: creación, consulta, actualización y eliminación."
 class CreateMembershipUseCase:
     """Crea y asigna una membresía a un usuario."""
 

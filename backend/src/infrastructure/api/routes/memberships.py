@@ -2,6 +2,7 @@
 from typing import Annotated
 from uuid import UUID
 
+"Rutas para gestionar membresías: CRUD y consulta de membresías propias."""
 from fastapi import APIRouter, Depends, HTTPException, status
 
 from src.application.dtos.membership_dto import (

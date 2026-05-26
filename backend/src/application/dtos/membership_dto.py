@@ -4,8 +4,9 @@ from typing import Optional
 from uuid import UUID
 from pydantic import BaseModel, EmailStr, field_validator
 
-
+"DTOs para planes, usuarios, membresías y autenticación (registro/login)"""
 # ── Planes ────────────────────────────────────────────────────
+"DTO de respuesta para planes, incluye información detallada del plan."
 class PlanResponseDTO(BaseModel):
     id: UUID
     name: str
@@ -34,7 +35,7 @@ class UserCreateDTO(BaseModel):
             raise ValueError("Rol inválido. Use 'admin' o 'user'.")
         return v
 
-
+"DTO de respuesta para usuarios, incluye información básica y rol."
 class UserResponseDTO(BaseModel):
     id: UUID
     full_name: str
@@ -81,7 +82,7 @@ class MembershipUpdateDTO(BaseModel):
             raise ValueError(f"Estado inválido. Opciones: {valid}")
         return v
 
-
+"DTO de respuesta para membresías, incluye datos del usuario y plan asociado."
 class MembershipResponseDTO(BaseModel):
     id: UUID
     status: str

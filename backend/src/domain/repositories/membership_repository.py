@@ -7,6 +7,7 @@ from abc import ABC, abstractmethod
 from typing import Optional
 from uuid import UUID
 
+"Repositorios para gestionar membresías, planes y usuarios. Son interfaces que definen el contrato de acceso a datos."
 from src.domain.entities.membership import Membership, MembershipStatus
 from src.domain.entities.plan import MembershipPlan, PlanType
 from src.domain.entities.user import User

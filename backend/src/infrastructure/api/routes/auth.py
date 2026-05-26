@@ -2,6 +2,7 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
 
+"Rutas de autenticación: registro, login y perfil del usuario."""
 from src.application.dtos.membership_dto import LoginDTO, TokenDTO, UserCreateDTO, UserResponseDTO
 from src.infrastructure.api.dependencies import (
     get_user_repo, get_auth_service, get_current_user,
